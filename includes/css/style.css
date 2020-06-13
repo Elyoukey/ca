@@ -1,0 +1,77 @@
+/*
+RESET CSS
+*/
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: arial, helvetica sans-serif;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6,
+nav, ol, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul li div{
+    display: inline;
+}
+
+table {
+    border-spacing: 2px;
+    border-collapse: separate;
+}
+
+table tr td {
+    padding: 2px;
+    margin: 2px;
+}
+
+form{
+    width: 100%;
+}
+
+/*honeypot*/
+.hname{
+    display: none;
+}
+
+/* login form */
+.login form label{
+    width: 30%;
+    display: inline-block;
+}
+.newaccount form label{
+    width: 30%;
+    display: inline-block;
+}
+
+/* Main template */
+table.listing{
+
+}
+
+/*animalslist*/
+#animalslist{
+}
+#animalslist .animal{
+    opacity: 0.35;
+}
+#animalslist .animal.active{
+    opacity: 1;
+}
+
