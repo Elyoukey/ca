@@ -5,7 +5,7 @@ session_start();
  * */
 setlocale(LC_ALL, 'fr_FR');
 define('BASE_PATH','http://localhost.zet/'); //without ending slash
-define('FILE_PATH','/www');
+define('FILE_PATH',__DIR__);
 
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);

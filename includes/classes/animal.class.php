@@ -4,12 +4,8 @@ class animal
 {
     var $id;
     var $name;
-    var $image;
     var $status;
     var $hash;
-
-    /*attached questions*/
-    var $questions;
 
     /* create a user object */
     function __construct(){
@@ -32,7 +28,6 @@ class animal
     function loadFromRow( $row ){
         $this->id       = $row['id'];
         $this->name     = $row['name'];
-        $this->image     = $row['image'];
         $this->status   = $row['status'];
         $this->hash   = $row['hash'];
     }
@@ -74,37 +69,33 @@ class animal
           INSERT INTO animals ( 
             id,
             name,
-            image,
             status,
             hash
             )
             VALUES
             (
-            ?,?,?,?,?
+            ?,?,?,?
             )
             ON DUPLICATE KEY UPDATE
             
             name=?,
-            image=?,
             status=?,
             hash=?
            ';
         $stmt = $db->prepare( $query );
-        $stmt->bind_param('ississsis',
+        $stmt->bind_param('isissis',
             $this->id,
             $this->name,
-            $this->image,
             $this->status,
             $this->hash,
             $this->name,
-            $this->image,
             $this->status,
             $this->hash
         );
         return $stmt->execute();
     }
 
-    function render(){
+    function render( $currentUser = null){
         ob_start();
         include __DIR__.'/../templates/animal.tpl.php';
         return ob_get_clean();
@@ -116,9 +107,4 @@ class animal
         return ob_get_clean();
     }
 
-    function renderQuestions(){
-        ob_start();
-        include __DIR__.'/../templates/animalform.tpl.php';
-        return ob_get_clean();
-    }
 }

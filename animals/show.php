@@ -9,7 +9,7 @@ if($id){
 }
 
 $mainpage->variables['title'] = 'Page animal';
-$mainpage->variables['maincontent'] = $animal->render();
+$mainpage->variables['maincontent'] = $animal->render($currentUser);
 
 
 /* render main pqge*/

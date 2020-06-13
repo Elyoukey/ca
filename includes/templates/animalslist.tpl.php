@@ -11,20 +11,23 @@
                          <?php echo $animal['name'];?>
                     </a>
                 </td>
-                <td>
-                    <a href="edit.php?id=<?php echo $animal['id'];?>">
-                         Modifier
-                    </a>
-                </td>
+
                 <td>
                     <img src="<?php echo BASE_PATH;?>/images/animals/<?php echo $animal['hash'];?>/image_full.jpg" width="20px"/>
                 </td>
                 <td>
                     <?php echo($animal['status'])?'Actif':'Désactivé' ?>
                 </td>
+                <td>
+                    <a href="edit.php?id=<?php echo $animal['id'];?>">
+                        Modifier
+                    </a>
+                </td>
             </tr>
         <?php endforeach;?>
     </table>
-
+<a href="edit.php">
+    Ajouter
+</a>
 </div>
 
