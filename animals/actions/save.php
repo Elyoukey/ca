@@ -36,9 +36,12 @@ if( !empty($_FILES["imageFile"]["tmp_name"])){
     }
 }
 
-var_Dump($animal);
 $animal->save();
 
 $_SESSION['messages'][] ='Données sauvegardées';
-header('Location: '.BASE_PATH.'/animals/show.php?id='.$animal->id);
+if($id) {
+    header('Location: ' . BASE_PATH . '/animals/show.php?id=' . $animal->id);
+}else{
+    header('Location: ' . BASE_PATH . '/animals/index.php');
+}
 ?>
