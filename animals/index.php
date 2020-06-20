@@ -1,6 +1,9 @@
 <?php
 /* include bootstrap file */
 include '../bootstrap.php';
+if (!$currentUser->isadmin){
+    die('Admin only');
+}
 
 $animalList = new animalsList();
 $animalList->getAll();
